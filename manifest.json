@@ -1,0 +1,23 @@
+{
+  "name": "ChatGepetto Chrome",
+  "description": "Relevancy-based language learning assistant.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "storage",
+    "activeTab",
+    "http://localhost:81/api/read"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "popup.html"
+  ]
+}
