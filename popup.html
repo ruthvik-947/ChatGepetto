@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      button {
+        border: none;
+        padding: 8px;
+        background-color: #0a0;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>My First Extension</h2>
+    <button onclick="doSomething()">Click me!</button>
+
+    <script>
+      function doSomething() {
+        chrome.tabs.create({
+          url: 'https://repl.it'
+        })
+      }
+    </script>
+  </body>
+</html>

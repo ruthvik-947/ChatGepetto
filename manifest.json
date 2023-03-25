@@ -1,0 +1,21 @@
+{
+  "name": "My First Extension",
+  "description": "Building my first Chrome extension :)",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.replit.com/*"],
+      "run_at": "document_idle",
+      "js": ["contentScript.js"]
+    }
+  ],
+  "options_page": "options.html"
+}
