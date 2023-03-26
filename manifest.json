@@ -3,21 +3,22 @@
   "description": "Relevancy-based language learning assistant.",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": [
+  "host_permissions": [
     "storage",
     "activeTab",
-    "http://localhost:81/api/read"
+    "http://localhost:5000/api/read"
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "options.html"
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls"],
+      "matches": ["<all_urls>"],
       "js": ["contentScript.js"]
     }
   ],
-  "web_accessible_resources": [
-    "popup.html"
-  ]
+  //TODO: add permissions!
 }
